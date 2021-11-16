@@ -5,8 +5,7 @@ import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @AllArgsConstructor
@@ -15,23 +14,39 @@ import java.util.Date;
 @Entity
 @Getter
 @Setter
+@Table(name = "products")
 public class Product {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Enumerated(EnumType.STRING)
     private Category category;
-    // private Type type;
+
+    @Enumerated(EnumType.STRING)
+    private Type type;
+
+    @Column(nullable = false, columnDefinition = "varchar255")
     private String productName;
+
+    @Column(nullable = false, columnDefinition = "varchar255")
     private String packaging;
+
+    @Column(nullable = false, columnDefinition = "varchar255")
     private double unitPrice;
+
+    @Column(nullable = false, columnDefinition = "varchar255")
     private String description;
+
     private String imgUrl;
     private int inStock;
-    private boolean isAvailable;
-    private int purchased;
+    private int purchasedPieces;
     private int rating;
+
     @CreationTimestamp
     private Date createDate;
+
     @UpdateTimestamp
     private Date lastUpdate;
 }

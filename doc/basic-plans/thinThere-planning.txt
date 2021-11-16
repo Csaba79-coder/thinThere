@@ -1,19 +1,19 @@
 
 BodyShop:
 	- technologies:
-		-> JPAreposytory
+		-> JPA repository
 		-> Lombok
 		-> Spring Security / Okta
 		-> MySQL Connector
 		-> Validation
-		-> Java Mail Sender (ha lesz rá idő, kell)
+		-> Java Mail Sender (if we have enough time)
 		-> Spring Test
 		-> Spring Web
 
 	- classes: 
 		-> user
 			=> Long id
-			=> str userNamer -email
+			=> str userName -email
 			=> str firstName
 			=> str lastName
 			=> str password
@@ -27,7 +27,7 @@ BodyShop:
 			=> list<Products> favourite
 			=> list<Order> order
 			=> int loyaltyPoint -->> hűségprogram: 100 Ft-onként 1 pont, ami levásárolható - min 100 ponttól (lesz rá idő)
-			=> userRole userRole
+			=> UserRole userRole
 			=> boolean enabled
 			=> boolean locked
 

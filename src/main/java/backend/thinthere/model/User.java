@@ -1,5 +1,6 @@
 package backend.thinthere.model;
 
+import backend.thinthere.enums.Role;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -11,6 +12,7 @@ import java.io.Serializable;
 import java.lang.reflect.GenericArrayType;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Getter
 @Setter

@@ -1,0 +1,97 @@
+
+BodyShop:
+	- technologies:
+		-> JPAreposytory
+		-> Lombok
+		-> Spring Security / Okta
+		-> MySQL Connector
+		-> Validation
+		-> Java Mail Sender (ha lesz rá idő, kell)
+		-> Spring Test
+		-> Spring Web
+
+	- classes: 
+		-> user
+			=> Long id
+			=> str userNamer -email
+			=> str firstName
+			=> str lastName
+			=> str password
+			=> date registrationDate
+			=> date lastUpdate
+			=> str country
+			=> int postalCode
+			=> str city
+			=> str address
+			=> str houseNumber
+			=> list<Products> favourite
+			=> list<Order> order
+			=> int loyaltyPoint -->> hűségprogram: 100 Ft-onként 1 pont, ami levásárolható - min 100 ponttól (lesz rá idő)
+			=> userRole userRole
+			=> boolean enabled
+			=> boolean locked
+
+		-> Products
+			=> Long id
+			=> Category category - sporteszköz/ fehérjepor/ vitamin/ teljesítményfokozó/ testsúly-kontroll formulák
+			=> Type type - gluténmentes, laktózmentes, vegán, cukormentes, sporteszköz, else
+			=> str productName
+			=> str packaging
+			=> double unitPrice ?magyar/angol?
+			=> str description
+			=> str imgUrl
+			=> int inStock
+			=> boolean isAvailable
+			=> int purchased -->> népszerűség szerinti rendezés (lesz rá idő -> eladott termékek számlálása)
+			=> int rating ????? (lesz rá idő -> 1-5)
+			=> date createDate
+			=> date lastUpdate
+
+		-> Order
+			=> Long ID
+			=> User user
+			=> List<Products> products
+			=> Status status - kosárban/megrendelve/összekészítve/a futárnál/kézbesítve/storno
+			=> Payment payment - bankkártyával fizetve/ bankkártyával utánvétel / készpénzel utánvétel
+			=> double totalPrice ?hol legyen?
+
+	- functions: listázás, törlés Id alapján, új termék hozzáadása, termék darabszám frissítése, a termék nem elérhető, rendelés esetén darabszám csökkentése,
+		     termék kosárba, user reg, login
+		-> kosár: betesz/ kivesz
+		-> termék kereső
+		-> rendezés abc szerint
+		-> rendezés ár szerint növekvő/csökkenő
+		-> gluténmentes, laktózmentes, vegán, cukormentes, sporteszköz, else szerinti rendezés
+		-> népszerűség szerinti rendezés (lesz rá idő -> eladott termékek számlálása)
+		-> termékek osztályzása (lesz rá idő -> 1-5)
+		-> kedvenc termékek listája a user felületen (lesz rá idő)
+		-> hűségprogram: 100 Ft-onként 1 pont, ami levásárolható - min 100 ponttól (lesz rá idő)
+
+	- jogosultságok: user/admin jogosultság
+		-> user: rendelni tud, láthatja, módosíthatja saját adatait, láthatja a kedvenceket(listázhatja), és az eddigi megrendeléseit
+		-> admin: mindent is - termékfeltöltés, darabszám frissítés, user adatok listázása/módosítása
+
+ThinTrainer:
+
+	- technologies:
+		-> 
+
+	- classes: 
+		-> exercise
+			=> Long id
+			=> str name
+			=> int starterLevel
+			=> int advancedLevel
+			=> enum muscleGroup - felsőtest/hasizom/hátizom/láb
+			=> goal - erősít/kardio
+
+
+	- functions: admin listázhat, bővíthet, törölhet
+
+
+
+
+
+
+
+

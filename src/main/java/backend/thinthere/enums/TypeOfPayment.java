@@ -2,8 +2,8 @@ package backend.thinthere.enums;
 
 public enum TypeOfPayment {
 
-    cash,
-    transfer,
-    directDebit,
-    bankcard,
+    CASH,
+    BANK_TRANSFER,
+    DIRECT_DEBIT,
+    BANKCARD,
 }

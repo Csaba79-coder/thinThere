@@ -7,48 +7,46 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @AllArgsConstructor
-@EqualsAndHashCode
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 public class Order {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  Long Id;
+  private Long Id;
 
-  User user;
+  private User user;
 
-  @ManyToMany(mappedBy = "order")
+  @OneToMany(mappedBy = "order")
   @JsonManagedReference(value = "order-products")
-  List<Products> products;
+  private List<Product> product;
 
   @Enumerated(EnumType.STRING)
-  Status status;
+  private Status status;
 
   @Enumerated(EnumType.STRING)
-  Payment payment;
+  private Payment payment;
 
-  double totalPrice = totalPriceSum();
+  private double totalPrice = totalPriceSum();
 
   public Order() {
   }
 
-  public double totalPriceSum(){
+  private double totalPriceSum(){
 
     double currentTotalPrice = 0;
 
-    for (int i = 0; i < products.size(); i++) {
-      currentTotalPrice = currentTotalPrice + products.get(i).getUnitPrice();
+    for (int i = 0; i < product.size(); i++) {
+      currentTotalPrice =+ product.get(i).getUnitPrice();
     }
 
     return currentTotalPrice;

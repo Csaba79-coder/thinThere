@@ -1,17 +1,16 @@
 package backend.thinthere.model;
 
+import backend.thinthere.enums.Status;
+import backend.thinthere.enums.TypeOfPayment;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+
+import javax.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -24,17 +23,19 @@ public class Order {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long Id;
 
+  @ManyToOne
+  @JoinColumn(name="user_id")
   private User user;
 
-  @OneToMany(mappedBy = "order")
+  @OneToMany(mappedBy = "order") // other side!!! ...
   @JsonManagedReference(value = "order-products")
-  private List<Product> product;
+  private List<Product> product; // this needs foreign key
 
   @Enumerated(EnumType.STRING)
   private Status status;
 
   @Enumerated(EnumType.STRING)
-  private Payment payment;
+  private TypeOfPayment typeOfPayment;
 
   private double totalPrice = totalPriceSum();
 

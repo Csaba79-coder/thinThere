@@ -7,6 +7,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,7 +26,8 @@ public class Product {
     private Category category;
 
     @Enumerated(EnumType.STRING)
-    private Type type;
+    @Column(columnDefinition = "varchar(32) default 'UNKNOWN'")
+    private List<TypeOfProduct> typeOfProductList;
 
     @Column(nullable = false, columnDefinition = "varchar255")
     private String productName;

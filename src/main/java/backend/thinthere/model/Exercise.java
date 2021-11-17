@@ -1,6 +1,7 @@
 package backend.thinthere.model;
 
 import backend.thinthere.enums.Goal;
+import backend.thinthere.enums.MuscleGroup;
 import lombok.*;
 
 import javax.persistence.*;

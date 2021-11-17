@@ -8,22 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="thin-there" />
-<<<<<<< HEAD
-        <module name="thinThere" />
-=======
         <module name="thinThereProject" />
->>>>>>> 88e6bb26e6a2e3071c15816ec8d37c8c2321fe3a
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="thin-there" options="-parameters" />
-<<<<<<< HEAD
-      <module name="thinThere" options="-parameters" />
-=======
       <module name="thinThereProject" options="-parameters" />
->>>>>>> 88e6bb26e6a2e3071c15816ec8d37c8c2321fe3a
     </option>
   </component>
 </project>

@@ -1,12 +1,14 @@
 package backend.thinthere.service;
 
-import backend.thinthere.model.User;
+import backend.thinthere.repository.UserRepository;
+import org.springframework.stereotype.Service;
 
-import java.util.List;
 
-public interface UserService {
+@Service
+public class UserService {
+    private final UserRepository userRepository;
 
-    List<User> getAll();
-
-    User getByUsername(String username);
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 }

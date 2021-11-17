@@ -6,8 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,8 +24,15 @@ public class Product {
     @Enumerated(EnumType.STRING)
     private Category category;
 
-    @Enumerated(EnumType.STRING)
-    @Column(columnDefinition = "varchar(32) default 'UNKNOWN'")
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Order order;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @ManyToMany
     private List<TypeOfProduct> typeOfProductList;
 
     @Column(nullable = false, columnDefinition = "varchar255")

@@ -46,8 +46,10 @@ public class Order {
 
     double currentTotalPrice = 0;
 
-    for (int i = 0; i < product.size(); i++) {
-      currentTotalPrice =+ product.get(i).getUnitPrice();
+    if(product != null) {
+      for (Product value : product) {
+        currentTotalPrice += value.getUnitPrice();
+      }
     }
 
     return currentTotalPrice;

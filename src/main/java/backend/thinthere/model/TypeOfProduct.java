@@ -15,7 +15,7 @@ import javax.persistence.Id;
 public class TypeOfProduct {
 
     @Id
-    @Column(nullable = false, columnDefinition = "varchar255")
+    @Column(nullable = false, columnDefinition = "varchar(255)")
     private String name;
 
     /*GLUTEN_FREE,

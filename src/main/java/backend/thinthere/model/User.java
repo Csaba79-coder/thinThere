@@ -6,13 +6,10 @@ import java.util.Collection;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.boot.context.properties.bind.DefaultValue;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.lang.reflect.GenericArrayType;
 import java.sql.Date;
-import java.sql.Timestamp;
 import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -31,7 +28,7 @@ public class User implements Serializable, UserDetails {
     private Long ID;
 
     @Column(unique = true, nullable = false, columnDefinition = "varchar(255)")
-    private String email;
+    private String username;
 
     @Column(nullable = false, columnDefinition = "varchar(255)")
     private String firstName;
@@ -88,7 +85,7 @@ public class User implements Serializable, UserDetails {
 
     @Override
     public String getUsername() {
-        return email;
+        return username;
     }
 
     @Override
@@ -106,10 +103,10 @@ public class User implements Serializable, UserDetails {
         return true;
     }
 
-    public User(String email, String firstName, String lastName, String password,
+    public User(String username, String firstName, String lastName, String password,
         String country, String postalCode, String city, String address, String houseNumber,
         String phoneNumber) {
-        this.email = email;
+        this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;

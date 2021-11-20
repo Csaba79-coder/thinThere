@@ -7,29 +7,37 @@
 	"item": [
 		{
 			"name": "register",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							"{\r",
-							"    \"username\":\"ej@gmail.com\",\r",
-							"    \"password\":\"word\",\r",
-							"    \"firstName\":\"ej\",\r",
-							"    \"lastName\":\"fel\",\r",
-							"    \"country\":\"asdf\",\r",
-							"    \"postalCode\":\"asdf\",\r",
-							"    \"city\":\"asdf\",\r",
-							"    \"address\":\"asdf\",\r",
-							"    \"houseNumber\":\"asdf\",\r",
-							"    \"phoneNumber\":\"asdf\"\r",
-							"}\r",
-							""
-						],
-						"type": "text/javascript"
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"ej@gmail.com\",\r\n    \"password\":\"word\",\r\n    \"firstName\":\"ej\",\r\n    \"lastName\":\"fel\",\r\n    \"country\":\"asdf\",\r\n    \"postalCode\":\"asdf\",\r\n    \"city\":\"asdf\",\r\n    \"address\":\"asdf\",\r\n    \"houseNumber\":\"asdf\",\r\n    \"phoneNumber\":\"asdf\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
 					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
 				}
-			],
+			},
+			"response": []
+		},
+		{
+			"name": "login",
 			"request": {
 				"auth": {
 					"type": "noauth"

@@ -39,6 +39,8 @@ public class UserService {
             User user = new User();
             modelMapper.map(userRequestDTO, user);
             user.setPassword(passwordEncoder.encode(user.getPassword()));
+            user.setEnabled(true);
+            user.setLocked(false);
             userRepository.save(user);
         }
 

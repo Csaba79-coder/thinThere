@@ -35,16 +35,16 @@ public class Product {
     @ManyToMany
     private List<TypeOfProduct> typeOfProductList;
 
-    @Column(nullable = false, columnDefinition = "varchar255")
+    @Column(nullable = false, columnDefinition = "varchar(255)")
     private String productName;
 
-    @Column(nullable = false, columnDefinition = "varchar255")
+    @Column(nullable = false, columnDefinition = "varchar(255)")
     private String packaging;
 
-    @Column(nullable = false, columnDefinition = "varchar255")
+    @Column(nullable = false, columnDefinition = "varchar(255)")
     private double unitPrice;
 
-    @Column(nullable = false, columnDefinition = "varchar255")
+    @Column(nullable = false, columnDefinition = "varchar(255)")
     private String description;
 
     private String imgUrl;

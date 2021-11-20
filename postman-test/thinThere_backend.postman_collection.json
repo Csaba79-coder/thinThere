@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "bcc81191-daf0-4add-bb80-986d2765e75c",
+		"name": "thinThere_backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"ej@gmail.com\",\r\n    \"password\":\"word\",\r\n    \"firstName\":\"ej\",\r\n    \"lastName\":\"fel\",\r\n    \"country\":\"asdf\",\r\n    \"postalCode\":\"asdf\",\r\n    \"city\":\"asdf\",\r\n    \"address\":\"asdf\",\r\n    \"houseNumber\":\"asdf\",\r\n    \"phoneNumber\":\"asdf\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"ej@gmail.com\",\r\n    \"password\":\"word\",\r\n    \"firstName\":\"ej\",\r\n    \"lastName\":\"fel\",\r\n    \"country\":\"asdf\",\r\n    \"postalCode\":\"asdf\",\r\n    \"city\":\"asdf\",\r\n    \"address\":\"asdf\",\r\n    \"houseNumber\":\"asdf\",\r\n    \"phoneNumber\":\"asdf\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

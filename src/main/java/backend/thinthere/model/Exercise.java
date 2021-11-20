@@ -19,7 +19,7 @@ public class Exercise {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false, columnDefinition = "varchar255")
+    @Column(nullable = false, columnDefinition = "varchar(255)")
     private String name;
 
     private int starterLevel;

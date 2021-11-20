@@ -116,5 +116,7 @@ public class User implements Serializable, UserDetails {
         this.address = address;
         this.houseNumber = houseNumber;
         this.phoneNumber = phoneNumber;
+        this.enabled = true;
+        this.locked = false;
     }
 }

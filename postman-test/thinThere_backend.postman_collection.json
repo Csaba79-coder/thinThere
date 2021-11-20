@@ -1,69 +1,43 @@
 {
 	"info": {
-		"_postman_id": "bcc81191-daf0-4add-bb80-986d2765e75c",
+		"_postman_id": "22044a01-d596-4290-b86b-2d467062c303",
 		"name": "thinThere_backend",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "register",
+			"name": "http://localhost:8080/register",
 			"request": {
-				"auth": {
-					"type": "noauth"
-				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\":\"ej@gmail.com\",\r\n    \"password\":\"word\",\r\n    \"firstName\":\"ej\",\r\n    \"lastName\":\"fel\",\r\n    \"country\":\"asdf\",\r\n    \"postalCode\":\"asdf\",\r\n    \"city\":\"asdf\",\r\n    \"address\":\"asdf\",\r\n    \"houseNumber\":\"asdf\",\r\n    \"phoneNumber\":\"asdf\"\r\n}\r\n",
+					"raw": "{\r\n    \"username\":\"ej@gmail.com\",\r\n    \"password\":\"word\",\r\n    \"firstName\":\"ej\",\r\n    \"lastName\":\"fel\",\r\n    \"country\":\"asdf\",\r\n    \"postalCode\":\"asdf\",\r\n    \"city\":\"asdf\",\r\n    \"address\":\"asdf\",\r\n    \"houseNumber\":\"asdf\",\r\n    \"phoneNumber\":\"asdf\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "http://localhost:8080/register",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"register"
-					]
-				}
+				"url": "http://localhost:8080/register"
 			},
 			"response": []
 		},
 		{
-			"name": "login",
+			"name": "http://localhost:8080/login",
 			"request": {
-				"auth": {
-					"type": "noauth"
-				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\":\"ej@gmail.com\",\r\n    \"password\":\"word\",\r\n    \"firstName\":\"ej\",\r\n    \"lastName\":\"fel\",\r\n    \"country\":\"asdf\",\r\n    \"postalCode\":\"asdf\",\r\n    \"city\":\"asdf\",\r\n    \"address\":\"asdf\",\r\n    \"houseNumber\":\"asdf\",\r\n    \"phoneNumber\":\"asdf\"\r\n}\r\n",
+					"raw": "{\r\n    \"username\":\"ej@gmail.com\",\r\n    \"password\":\"word\",\r\n    \"firstName\":\"ej\",\r\n    \"lastName\":\"fel\",\r\n    \"country\":\"asdf\",\r\n    \"postalCode\":\"asdf\",\r\n    \"city\":\"asdf\",\r\n    \"address\":\"asdf\",\r\n    \"houseNumber\":\"asdf\",\r\n    \"phoneNumber\":\"asdf\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "http://localhost:8080/register",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"register"
-					]
-				}
+				"url": "http://localhost:8080/login"
 			},
 			"response": []
 		}

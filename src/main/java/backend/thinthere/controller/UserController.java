@@ -1,11 +1,14 @@
 package backend.thinthere.controller;
 
+import backend.thinthere.model.User;
 import backend.thinthere.model.dto.LoginRequestDTO;
 import backend.thinthere.model.dto.LoginSuccessDTO;
 import backend.thinthere.model.dto.UserRequestDTO;
 import backend.thinthere.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,6 +32,17 @@ public class UserController {
   public ResponseEntity<Void> register(@RequestBody UserRequestDTO userRequestDTO) throws Exception {
     userService.register(userRequestDTO);
     return new ResponseEntity<>(HttpStatus.OK);
+  }
+
+  //@PreAuthorize("hasAuthority('ADMIN')")
+  @GetMapping("/get")
+  public String getHello() {
+    return "hello";
+  }
+
+  @GetMapping("/loggedinusers")
+  public User getLoggedIn(){
+    return userService.getLoggedInUser();
   }
 
 }

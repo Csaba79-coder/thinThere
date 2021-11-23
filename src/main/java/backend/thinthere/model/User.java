@@ -130,4 +130,25 @@ public class User implements Serializable, UserDetails {
         this.locked = false;
         this.role = Role.ADMIN;
     }
+
+    public User(Long ID, String username, String firstName, String lastName, String password,
+                String country, String postalCode, String city, String address, String houseNumber,
+                String phoneNumber, List<Order> order) {
+        this.ID = ID;
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.country = country;
+        this.postalCode = postalCode;
+        this.city = city;
+        this.address = address;
+        this.houseNumber = houseNumber;
+        this.phoneNumber = phoneNumber;
+        this.enabled = true;
+        this.locked = false;
+        this.role = Role.USER;
+        this.order = order;
+    }
+
 }

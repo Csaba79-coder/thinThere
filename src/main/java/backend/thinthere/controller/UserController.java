@@ -34,7 +34,7 @@ public class UserController {
     return new ResponseEntity<>(HttpStatus.OK);
   }
 
-  //@PreAuthorize("hasAuthority('ADMIN')")
+  @PreAuthorize("hasAuthority('ADMIN')")
   @GetMapping("/get")
   public String getHello() {
     return "hello";

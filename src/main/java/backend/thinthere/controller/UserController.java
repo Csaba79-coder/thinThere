@@ -48,7 +48,7 @@ public class UserController {
     return "hello";
   }
 
-  @GetMapping("/loggedinusers")
+  @GetMapping("/loggedInUsers")
   public User getLoggedIn(){
     return userService.getLoggedInUser();
   }

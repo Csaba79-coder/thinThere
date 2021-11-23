@@ -1,7 +1,10 @@
 package backend.thinthere.model;
 
 import backend.thinthere.enums.Role;
+import backend.thinthere.enums.UserAuthority;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.ArrayList;
 import java.util.Collection;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -12,6 +15,7 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Getter
@@ -80,7 +84,13 @@ public class User implements Serializable, UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        List<SimpleGrantedAuthority> list = new ArrayList<>();
+
+        for (UserAuthority auth : role.AUTHS) {
+            list.add(new SimpleGrantedAuthority(auth.toString()));
+        }
+
+        return list;
     }
 
     @Override
@@ -105,7 +115,7 @@ public class User implements Serializable, UserDetails {
 
     public User(String username, String firstName, String lastName, String password,
         String country, String postalCode, String city, String address, String houseNumber,
-        String phoneNumber) {
+        String phoneNumber/*, Role role*/) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -118,5 +128,6 @@ public class User implements Serializable, UserDetails {
         this.phoneNumber = phoneNumber;
         this.enabled = true;
         this.locked = false;
+        this.role = Role.ADMIN;
     }
 }

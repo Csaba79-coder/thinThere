@@ -9,12 +9,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="thin-there" />
         <module name="thinThereProject" />
+        <module name="thinThere" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="thin-there" options="-parameters" />
+      <module name="thinThere" options="-parameters" />
       <module name="thinThereProject" options="-parameters" />
     </option>
   </component>

@@ -115,7 +115,7 @@ public class User implements Serializable, UserDetails {
 
     public User(String username, String firstName, String lastName, String password,
         String country, String postalCode, String city, String address, String houseNumber,
-        String phoneNumber) {
+        String phoneNumber/*, Role role*/) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -128,5 +128,6 @@ public class User implements Serializable, UserDetails {
         this.phoneNumber = phoneNumber;
         this.enabled = true;
         this.locked = false;
+        this.role = Role.ADMIN;
     }
 }

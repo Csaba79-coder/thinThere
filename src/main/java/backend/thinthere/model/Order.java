@@ -55,4 +55,12 @@ public class Order {
     return currentTotalPrice;
   }
 
+  public Order(Long id, User user, List<Product> product, Status status,
+      TypeOfPayment typeOfPayment) {
+    Id = id;
+    this.user = user;
+    this.product = product;
+    this.status = status;
+    this.typeOfPayment = typeOfPayment;
+  }
 }

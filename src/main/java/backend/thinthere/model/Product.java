@@ -57,4 +57,18 @@ public class Product {
 
     @UpdateTimestamp
     private Date lastUpdate;
+
+    public Product(Long id, Category category,
+        List<TypeOfProduct> typeOfProductList, String productName, String packaging,
+        double unitPrice,
+        String description, int inStock) {
+        this.id = id;
+        this.category = category;
+        this.typeOfProductList = typeOfProductList;
+        this.productName = productName;
+        this.packaging = packaging;
+        this.unitPrice = unitPrice;
+        this.description = description;
+        this.inStock = inStock;
+    }
 }

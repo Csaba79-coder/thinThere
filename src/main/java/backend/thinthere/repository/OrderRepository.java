@@ -15,7 +15,7 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 
   Optional<Order> findById(Long Id);
 
-  Optional<Order> findByUser(String username);
+  Optional<Order> findByName(String username);
 
   List<Order> findAll();
 

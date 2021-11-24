@@ -19,20 +19,19 @@ public class OrderService {
     this.orderRepository = orderRepository;
   }
 
-  public List<Order> getAllOrder() {
+  public Optional<Order> findById(Long Id) {
+    return orderRepository.findById(Id);
+  }
+
+  public Optional<Order> findByName(String username) {
+    return orderRepository.findByName(username);
+  }
+
+  public List<Order> findAllOrder() {
     return orderRepository.findAll();
   }
 
   public List<Order> findOrderByStatus(Status status) {
     return orderRepository.findByStatus(status);
-  }
-
-  // TODO check what optional does or needs throws Exception
-  public Optional<Order> findOrderById(Long Id) {
-    return orderRepository.findById(Id);
-  }
-
-  public Optional<Order> findOrderByUser(String username) {
-    return orderRepository.findByUser(username);
   }
 }

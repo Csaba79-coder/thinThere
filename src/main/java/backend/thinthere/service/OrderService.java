@@ -3,6 +3,7 @@ package backend.thinthere.service;
 import backend.thinthere.enums.Status;
 import backend.thinthere.model.Order;
 import backend.thinthere.repository.OrderRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +14,7 @@ public class OrderService {
 
   private final OrderRepository orderRepository;
 
+  @Autowired
   public OrderService(OrderRepository orderRepository) {
     this.orderRepository = orderRepository;
   }

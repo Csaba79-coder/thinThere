@@ -21,6 +21,9 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(nullable = false, columnDefinition = "varchar(255)")
+    private String productName;
+
     @Enumerated(EnumType.STRING)
     private Category category;
 
@@ -34,9 +37,6 @@ public class Product {
 
     @ManyToMany
     private List<TypeOfProduct> typeOfProductList;
-
-    @Column(nullable = false, columnDefinition = "varchar(255)")
-    private String productName;
 
     @Column(nullable = false, columnDefinition = "varchar(255)")
     private String packaging;

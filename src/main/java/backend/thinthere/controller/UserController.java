@@ -52,5 +52,4 @@ public class UserController {
   public User getLoggedIn(){
     return userService.getLoggedInUser();
   }
-
 }

@@ -66,14 +66,12 @@ public class UserService implements UserDetailsService {
 
     public User getLoggedInUser() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-
         if (auth != null) {
             Object principal = auth.getPrincipal();
             if (principal instanceof User) {
                 return (User) principal;
             }
         }
-
         return null;
     }
 }

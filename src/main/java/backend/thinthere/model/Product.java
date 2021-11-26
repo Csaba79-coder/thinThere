@@ -52,7 +52,7 @@ public class Product {
     private int purchasedPieces;
     private int rating;
 
-    @CreationTimestamp
+    @UpdateTimestamp
     private Date createDate;
 
     @UpdateTimestamp

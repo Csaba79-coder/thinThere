@@ -1,7 +1,6 @@
 package backend.thinthere.service;
 
 import backend.thinthere.enums.Category;
-import backend.thinthere.model.Order;
 import backend.thinthere.model.Product;
 import backend.thinthere.model.TypeOfProduct;
 import backend.thinthere.repository.ProductRepository;
@@ -34,10 +33,10 @@ public class ProductService {
     }
 
     public List<Product> findProductByType(TypeOfProduct typeOfProduct){
-        return productRepository.findByType(typeOfProduct);
+        return productRepository.findByTypeOfProductList(typeOfProduct);
     }
 
     public Optional<Product> findByProductName(String name){
-        return productRepository.findByName(name);
+        return productRepository.findByProductName(name);
     }
 }

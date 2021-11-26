@@ -23,9 +23,9 @@ public class OrderService {
     return orderRepository.findById(Id);
   }
 
-  public Optional<Order> findByName(String username) {
+  /*public Optional<Order> findByName(String username) {
     return orderRepository.findByName(username);
-  }
+  }*/
 
   public List<Order> findAllOrder() {
     return orderRepository.findAll();

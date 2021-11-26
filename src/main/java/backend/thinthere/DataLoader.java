@@ -21,24 +21,23 @@ import org.springframework.stereotype.Component;
 @Component
 public class DataLoader implements ApplicationRunner {
 
-  @Autowired
   private UserRepository userRepository;
-
-  @Autowired
   private TypeOfProductRepository typeOfProductRepository;
-
-  @Autowired
   private ProductRepository productRepository;
-
-  @Autowired
   private OrderRepository orderRepository;
-
-  @Autowired
   private PasswordEncoder passwordEncoder;
 
-
-  public DataLoader(UserRepository userRepository) {
+  @Autowired
+  public DataLoader(UserRepository userRepository,
+                    TypeOfProductRepository typeOfProductRepository,
+                    ProductRepository productRepository,
+                    OrderRepository orderRepository,
+                    PasswordEncoder passwordEncoder) {
     this.userRepository = userRepository;
+    this.typeOfProductRepository = typeOfProductRepository;
+    this.productRepository = productRepository;
+    this.orderRepository = orderRepository;
+    this.passwordEncoder = passwordEncoder;
   }
 
   public void run(ApplicationArguments arguments) {
@@ -130,7 +129,6 @@ public class DataLoader implements ApplicationRunner {
 
     orderListTeo.add(orderRepository.findById(23L).orElseThrow());
     orderListTeo.add(orderRepository.findById(24L).orElseThrow());
-
   }
 
 }

@@ -37,7 +37,7 @@ public class Order {
   @Enumerated(EnumType.STRING)
   private TypeOfPayment typeOfPayment;
 
-  private double totalPrice = totalPriceSum();
+  private double totalPrice;
 
   public Order() {
   }
@@ -62,5 +62,6 @@ public class Order {
     this.product = product;
     this.status = status;
     this.typeOfPayment = typeOfPayment;
+    this.totalPrice = totalPriceSum();
   }
 }

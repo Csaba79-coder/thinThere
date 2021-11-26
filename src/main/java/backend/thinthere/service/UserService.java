@@ -8,6 +8,7 @@ import backend.thinthere.model.dto.UserRequestDTO;
 import backend.thinthere.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -20,7 +21,8 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -34,6 +36,21 @@ public class UserService implements UserDetailsService {
     private final MyUserDetailsService myUserDetailsService;
     private final JwtUtil jwtUtil;
     private final PasswordEncoder passwordEncoder;
+
+    @Autowired
+    public UserService(EntityManager em,
+                       UserRepository userRepository,
+                       AuthenticationManager authenticationManager,
+                       MyUserDetailsService myUserDetailsService,
+                       JwtUtil jwtUtil,
+                       PasswordEncoder passwordEncoder) {
+        this.em = em;
+        this.userRepository = userRepository;
+        this.authenticationManager = authenticationManager;
+        this.myUserDetailsService = myUserDetailsService;
+        this.jwtUtil = jwtUtil;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     public String authenticateExistingUser(LoginRequestDTO loginRequestDTO){
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequestDTO.getUsername(), loginRequestDTO.getPassword()));
@@ -66,14 +83,20 @@ public class UserService implements UserDetailsService {
 
     public User getLoggedInUser() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-
         if (auth != null) {
             Object principal = auth.getPrincipal();
             if (principal instanceof User) {
                 return (User) principal;
             }
         }
-
         return null;
+    }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
+    public Optional<User> getUserById(Long id) {
+        return userRepository.findByID(id);
     }
 }

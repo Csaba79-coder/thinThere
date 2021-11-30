@@ -12,6 +12,8 @@ import backend.thinthere.repository.ProductRepository;
 import backend.thinthere.repository.TypeOfProductRepository;
 import backend.thinthere.repository.UserRepository;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -52,16 +54,16 @@ public class DataLoader implements ApplicationRunner {
     TypeOfProduct other = new TypeOfProduct("OTHER");
     typeOfProductRepository.save(other);
 
-    ArrayList<TypeOfProduct> typeListOther = new ArrayList<>();
+    Set<TypeOfProduct> typeListOther = new HashSet<>();
     typeListOther.add(typeOfProductRepository.findByName("OTHER").orElseThrow());
 
 
-    ArrayList<TypeOfProduct> typeListGLS = new ArrayList<>();
+    Set<TypeOfProduct> typeListGLS = new HashSet<>();
     typeListGLS.add(typeOfProductRepository.findByName("GLUTEN_FREE").orElseThrow());
     typeListGLS.add(typeOfProductRepository.findByName("LACTOSE_FREE").orElseThrow());
     typeListGLS.add(typeOfProductRepository.findByName("SUGAR_FREE").orElseThrow());
 
-    Product yogaBall = new Product( Category.SPORTS_EQUIPMENT, new ArrayList<>(), "Yoga Ball", "1 piece", 7.99, "23-25 cm Soft Yoga Ball with Inflatable Straw for Pilates, Yoga, Full Body Workout, Improve Balance at Home in the Gym and Office.", 35);
+    Product yogaBall = new Product( Category.SPORTS_EQUIPMENT, new HashSet<>(), "Yoga Ball", "1 piece", 7.99, "23-25 cm Soft Yoga Ball with Inflatable Straw for Pilates, Yoga, Full Body Workout, Improve Balance at Home in the Gym and Office.", 35);
     yogaBall.getTypeOfProductList().add(other);
     productRepository.save(yogaBall);
 
@@ -101,11 +103,11 @@ public class DataLoader implements ApplicationRunner {
     looseWeightProducts.add(productRepository.findByProductName("Energy Shot").orElseThrow());
     looseWeightProducts.add(productRepository.findByProductName("Super Fat Burner").orElseThrow());
 
-    ArrayList<Order> orderListUbi = new ArrayList<>();
+    Set<Order> orderListUbi = new HashSet<>();
 
-    ArrayList<Order> orderListUrsi = new ArrayList<>();
+    Set<Order> orderListUrsi = new HashSet<>();
 
-    ArrayList<Order> orderListTeo = new ArrayList<>();
+    Set<Order> orderListTeo = new HashSet<>();
 
     userRepository.save(new User("ubi@gmail.com", "Ubul", "Reckless",
         passwordEncoder.encode("pass"), "Germany", "80333", "München",

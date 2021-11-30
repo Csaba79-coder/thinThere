@@ -1,6 +1,7 @@
 package backend.thinthere.model;
 
 import backend.thinthere.enums.Category;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -27,18 +28,20 @@ public class Product {
     @Enumerated(EnumType.STRING)
     private Category category;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "product")
-    private List<Order> order;
+    private Set<Order> order;
 
-    @ManyToMany (fetch = FetchType.LAZY )
+/*    @ManyToMany (fetch = FetchType.LAZY )
     @JoinTable(name = "product_user", joinColumns = @JoinColumn(name ="product_id"),
         inverseJoinColumns = @JoinColumn(name = "user_id"))
-    private List<User> user;
+    private List<User> user;*/
 
-    @ManyToMany(fetch = FetchType.LAZY )
+
+    @ManyToMany
     @JoinTable(name = "product_typeOfProduct", joinColumns = @JoinColumn(name ="product_id"),
         inverseJoinColumns = @JoinColumn(name = "typeOfProduct_name"))
-    private List<TypeOfProduct> typeOfProductList;
+    private Set<TypeOfProduct> typeOfProductList;
 
     @Column(nullable = false, columnDefinition = "varchar(255)")
     private String packaging;
@@ -61,7 +64,7 @@ public class Product {
     private Date lastUpdate;
 
     public Product(Category category,
-        List<TypeOfProduct> typeOfProductList, String productName, String packaging,
+        Set<TypeOfProduct> typeOfProductList, String productName, String packaging,
         double unitPrice,
         String description, int inStock) {
         this.category = category;

@@ -2,10 +2,12 @@ package backend.thinthere.model;
 
 import backend.thinthere.enums.Role;
 import backend.thinthere.enums.UserAuthority;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Set;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -76,11 +78,12 @@ public class User implements Serializable, UserDetails {
 
     private int loyaltyPoint;
 
-    @ManyToMany(mappedBy="user")
-    private List<Product> favourite;
+/*    @ManyToMany(mappedBy="user")
+    private List<Product> favourite;*/
 
+    @JsonManagedReference
     @OneToMany(mappedBy="user")
-    private List<Order> order;
+    private Set<Order> order;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -133,7 +136,7 @@ public class User implements Serializable, UserDetails {
 
     public User(String username, String firstName, String lastName, String password,
                 String country, String postalCode, String city, String address, String houseNumber,
-                String phoneNumber, List<Order> order) {
+                String phoneNumber, Set<Order> order) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;

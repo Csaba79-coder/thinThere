@@ -1,5 +1,6 @@
 package backend.thinthere.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -28,6 +29,7 @@ public class TypeOfProduct {
     @Column(nullable = false, columnDefinition = "varchar(255)")
     private String name;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "typeOfProductList")
     private List<Product> products = new ArrayList<>();
 

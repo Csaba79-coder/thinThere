@@ -105,14 +105,12 @@ public class UserService implements UserDetailsService {
      * update, delete
      */
 
-    /*
-    public User updateUser(User user, Long id) {
+    public User updateUser(User user) {
         return userRepository.save(user);
     }
 
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
-    */
 
 }

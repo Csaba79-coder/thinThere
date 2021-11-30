@@ -44,18 +44,16 @@ public class ProductService {
      * create, update, delete
      */
 
-    /*
     public Product saveNewProduct(Product product) {
         return productRepository.save(product);
     }
 
-    public Product updateProduct(Product product, Long id) {
+    public Product updateProduct(Product product) {
         return productRepository.save(product);
     }
 
     public void deleteProduct(Long id) {
         productRepository.deleteById(id);
     }
-    */
 
 }

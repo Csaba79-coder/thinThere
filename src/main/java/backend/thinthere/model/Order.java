@@ -23,13 +23,14 @@ public class Order {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long Id;
 
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name="user_id")
   private User user;
 
-  @OneToMany(mappedBy = "order") // other side!!! ...
-  @JsonManagedReference(value = "order-products")
-  private List<Product> product; // this needs foreign key
+  @ManyToMany(fetch = FetchType.LAZY )
+  @JoinTable(name = "product_Order", joinColumns = @JoinColumn(name ="order_id"),
+      inverseJoinColumns = @JoinColumn(name = "product_id"))
+  private List<Product> product;
 
   @Enumerated(EnumType.STRING)
   private Status status;
@@ -55,9 +56,8 @@ public class Order {
     return currentTotalPrice;
   }
 
-  public Order(Long id, User user, List<Product> product, Status status,
+  public Order(User user, List<Product> product, Status status,
       TypeOfPayment typeOfPayment) {
-    Id = id;
     this.user = user;
     this.product = product;
     this.status = status;

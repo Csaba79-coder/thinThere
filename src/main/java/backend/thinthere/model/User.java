@@ -76,7 +76,7 @@ public class User implements Serializable, UserDetails {
 
     private int loyaltyPoint;
 
-    @OneToMany(mappedBy="user")
+    @ManyToMany(mappedBy="user")
     private List<Product> favourite;
 
     @OneToMany(mappedBy="user")
@@ -131,10 +131,9 @@ public class User implements Serializable, UserDetails {
         this.role = Role.ADMIN;
     }
 
-    public User(Long ID, String username, String firstName, String lastName, String password,
+    public User(String username, String firstName, String lastName, String password,
                 String country, String postalCode, String city, String address, String houseNumber,
                 String phoneNumber, List<Order> order) {
-        this.ID = ID;
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;

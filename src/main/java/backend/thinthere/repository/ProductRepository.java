@@ -20,4 +20,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
   List<Product> findByTypeOfProductList(TypeOfProduct typeOfProduct);
 
+  //add new and update
+  //Optional<Product> saveNewProduct(Product product); //--> save
+
 }

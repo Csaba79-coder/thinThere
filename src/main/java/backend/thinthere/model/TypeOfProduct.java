@@ -8,6 +8,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -26,6 +27,9 @@ import javax.persistence.Id;
 public class TypeOfProduct {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long Id;
+
     @Column(nullable = false, columnDefinition = "varchar(255)")
     private String name;
 

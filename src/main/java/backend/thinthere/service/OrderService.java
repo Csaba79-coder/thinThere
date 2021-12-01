@@ -34,4 +34,22 @@ public class OrderService {
   public List<Order> findOrderByStatus(Status status) {
     return orderRepository.findByStatus(status);
   }
+
+  /**
+   * create, update, delete
+   */
+
+
+  public Order saveNewOrder(Order order) {
+    return orderRepository.save(order);
+  }
+
+  public Order updateOrder(Order order) {
+    return orderRepository.save(order);
+  }
+
+  public void deleteOrder(Long id) {
+    orderRepository.deleteById(id);
+  }
+
 }

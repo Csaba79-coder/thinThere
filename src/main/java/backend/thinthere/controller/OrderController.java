@@ -35,7 +35,7 @@ public class OrderController {
   @PostMapping("/orders")
   public Order addNewOrder(@RequestBody Order order) {
     Order newOrder =
-            new Order(order.getId(),
+            new Order(
             order.getUser(),
             order.getProduct(),
             order.getStatus(),

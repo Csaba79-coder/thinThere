@@ -2,7 +2,6 @@ package backend.thinthere.service;
 
 import backend.thinthere.config.JwtUtil;
 import backend.thinthere.enums.Role;
-import backend.thinthere.model.Order;
 import backend.thinthere.model.User;
 import backend.thinthere.model.dto.LoginRequestDTO;
 import backend.thinthere.model.dto.UserRequestDTO;
@@ -70,7 +69,7 @@ public class UserService implements UserDetailsService {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
             user.setEnabled(true);
             user.setLocked(false);
-            user.setRole(Role.ADMIN);
+            user.setRole(Role.ROLE_ADMIN);
             userRepository.save(user);
         }
 

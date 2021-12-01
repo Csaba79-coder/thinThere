@@ -39,4 +39,21 @@ public class ProductService {
     public Optional<Product> findByProductName(String name){
         return productRepository.findByProductName(name);
     }
+
+    /**
+     * create, update, delete
+     */
+
+    public Product saveNewProduct(Product product) {
+        return productRepository.save(product);
+    }
+
+    public Product updateProduct(Product product) {
+        return productRepository.save(product);
+    }
+
+    public void deleteProduct(Long id) {
+        productRepository.deleteById(id);
+    }
+
 }

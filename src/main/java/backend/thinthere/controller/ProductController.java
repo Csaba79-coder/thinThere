@@ -12,7 +12,6 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
-@RequestMapping("api/")
 public class ProductController {
 
     private final ProductService productService;
@@ -46,7 +45,7 @@ public class ProductController {
         return productService.findByProductName(name);
     }
 
-    @PostMapping("/products")
+/*    @PostMapping("/products")
     public Product addNewProduct(@RequestBody Product product) {
         Product newProduct =
                 new Product(product.getId(),
@@ -58,7 +57,7 @@ public class ProductController {
                         product.getDescription(),
                         product.getInStock());
         return productService.saveNewProduct(newProduct);
-    }
+    }*/
 
     @PutMapping("/products/{id}")
     public Product updateProductById(@PathVariable("id") Long id,

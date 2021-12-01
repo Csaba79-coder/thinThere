@@ -32,7 +32,7 @@ public class OrderController {
     return orderService.findOrderByStatus(status);
   }
 
-  @PostMapping("/orders")
+/*  @PostMapping("/orders")
   public Order addNewOrder(@RequestBody Order order) {
     Order newOrder =
             new Order(order.getId(),
@@ -41,7 +41,7 @@ public class OrderController {
             order.getStatus(),
             order.getTypeOfPayment());
     return orderService.saveNewOrder(newOrder);
-  }
+  }*/
 
   @PutMapping("/orders/{id}")
   public Order updateOrderById(@PathVariable("id") Long id,

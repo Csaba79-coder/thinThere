@@ -131,7 +131,7 @@ public class User implements Serializable, UserDetails {
         this.phoneNumber = phoneNumber;
         this.enabled = true;
         this.locked = false;
-        this.role = Role.ADMIN;
+        this.role = Role.ROLE_ADMIN;
     }
 
     public User(String username, String firstName, String lastName, String password,
@@ -149,7 +149,7 @@ public class User implements Serializable, UserDetails {
         this.phoneNumber = phoneNumber;
         this.enabled = true;
         this.locked = false;
-        this.role = Role.USER;
+        this.role = Role.ROLE_USER;
         this.order = order;
     }
 

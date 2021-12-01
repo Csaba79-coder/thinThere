@@ -2,6 +2,7 @@ package backend.thinthere.service;
 
 import backend.thinthere.config.JwtUtil;
 import backend.thinthere.enums.Role;
+import backend.thinthere.model.Order;
 import backend.thinthere.model.User;
 import backend.thinthere.model.dto.LoginRequestDTO;
 import backend.thinthere.model.dto.UserRequestDTO;
@@ -99,4 +100,17 @@ public class UserService implements UserDetailsService {
     public Optional<User> getUserById(Long id) {
         return userRepository.findByID(id);
     }
+
+    /**
+     * update, delete
+     */
+
+    public User updateUser(User user) {
+        return userRepository.save(user);
+    }
+
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
+    }
+
 }

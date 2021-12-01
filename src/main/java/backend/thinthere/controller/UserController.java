@@ -1,6 +1,7 @@
 package backend.thinthere.controller;
 
 import backend.thinthere.config.JwtUtil;
+import backend.thinthere.model.Product;
 import backend.thinthere.model.User;
 import backend.thinthere.model.dto.LoginRequestDTO;
 import backend.thinthere.model.dto.LoginSuccessDTO;
@@ -15,10 +16,10 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class UserController {
@@ -53,4 +54,44 @@ public class UserController {
     return userService.getLoggedInUser();
   }
 
+  @GetMapping("/all_users")
+  public List<User> getAllUsers() {
+    return userService.getAllUsers();
+  }
+
+  @GetMapping("/users/{id}")
+  public Optional<User> getAllUsers(@PathVariable("id") Long id) {
+    return userService.getUserById(id);
+  }
+
+
+  @PutMapping("/users/{id}")
+  public User updateUserById(@PathVariable("id") Long id,
+                                             @RequestBody User user) {
+    User userData = userService.getUserById(id).orElseThrow();
+
+    try {
+      userData.setUsername(user.getUsername());
+      userData.setFirstName(user.getFirstName());
+      userData.setLastName(user.getLastName());
+      userData.setPassword(user.getPassword());
+      userData.setCountry(user.getCountry());
+      userData.setPostalCode(user.getPostalCode());
+      userData.setCity(user.getCity());
+      userData.setAddress(user.getAddress());
+      userData.setHouseNumber(user.getHouseNumber());
+      userData.setPhoneNumber(user.getPhoneNumber());
+      userData.setOrder(user.getOrder());
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return userService.updateUser(userData);
+  }
+
+
+  @DeleteMapping("/users/{id}")
+  public void deleteUser(@PathVariable("id") long id) {
+    userService.deleteUser(id);
+  }
 }

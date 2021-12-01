@@ -48,7 +48,7 @@ public class ProductController {
 /*    @PostMapping("/products")
     public Product addNewProduct(@RequestBody Product product) {
         Product newProduct =
-                new Product(product.getId(),
+                new Product(
                         product.getCategory(),
                         product.getTypeOfProductList(),
                         product.getProductName(),

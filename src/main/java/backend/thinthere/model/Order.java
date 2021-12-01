@@ -2,6 +2,7 @@ package backend.thinthere.model;
 
 import backend.thinthere.enums.Status;
 import backend.thinthere.enums.TypeOfPayment;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -23,13 +24,15 @@ public class Order {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long Id;
 
+  @JsonBackReference
   @ManyToOne
   @JoinColumn(name="user_id")
   private User user;
 
-  @OneToMany(mappedBy = "order") // other side!!! ...
-  @JsonManagedReference(value = "order-products")
-  private List<Product> product; // this needs foreign key
+  @ManyToMany
+  @JoinTable(name = "product_Order", joinColumns = @JoinColumn(name ="order_id"),
+      inverseJoinColumns = @JoinColumn(name = "product_id"))
+  private List<Product> product;
 
   @Enumerated(EnumType.STRING)
   private Status status;
@@ -55,9 +58,8 @@ public class Order {
     return currentTotalPrice;
   }
 
-  public Order(Long id, User user, List<Product> product, Status status,
+  public Order(User user, List<Product> product, Status status,
       TypeOfPayment typeOfPayment) {
-    Id = id;
     this.user = user;
     this.product = product;
     this.status = status;

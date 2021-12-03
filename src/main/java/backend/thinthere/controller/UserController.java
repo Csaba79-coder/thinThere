@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
   private UserService userService;
 
@@ -60,7 +61,7 @@ public class UserController {
   }
 
   @GetMapping("/users/{id}")
-  public Optional<User> getAllUsers(@PathVariable("id") Long id) {
+  public Optional<User> getUserById(@PathVariable("id") Long id) {
     return userService.getUserById(id);
   }
 

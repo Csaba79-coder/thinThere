@@ -30,17 +30,17 @@ public class ProductController {
         return productService.findById(id);
     }
 
-    @GetMapping("/products/{category}")
-    public List<Product> getProductById(@PathVariable("category") Category category) {
+    @GetMapping("/products/category/{category}")
+    public List<Product> getProductByCategory(@PathVariable("category") Category category) {
         return productService.findProductByCategory(category);
     }
 
-    @GetMapping("/products/{type_of_product}")
+    @GetMapping("/products/type_of_product/{type_of_product}")
     public List<Product> getProductByType(@PathVariable("type_of_product") TypeOfProduct typeOfProduct) {
         return productService.findProductByType(typeOfProduct);
     }
 
-    @GetMapping("/products/{name}")
+    @GetMapping("/products/name/{name}")
     public Optional<Product> getProductByName(@PathVariable("name") String name) {
         return productService.findByProductName(name);
     }

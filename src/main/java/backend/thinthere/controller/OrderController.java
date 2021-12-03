@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class OrderController {
 
   private final OrderService orderService;
@@ -22,12 +23,13 @@ public class OrderController {
     return orderService.findAllOrder();
   }
 
+
   @GetMapping("/orders/{id}")
   public Optional<Order> getOrderById(@PathVariable("id") Long id) {
     return orderService.findById(id);
   }
 
-  @GetMapping("/orders/{status}")
+  @GetMapping("/orders/status/{status}")
   public List<Order> getOrderByStatus(@PathVariable("status") Status status) {
     return orderService.findOrderByStatus(status);
   }

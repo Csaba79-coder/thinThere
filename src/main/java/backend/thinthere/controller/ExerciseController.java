@@ -22,10 +22,10 @@ public class ExerciseController {
         return exerciseService.getAll();
     }
 
-    /*@GetMapping("/exercises/{id}")
+    @GetMapping("/exercises/{id}")
     public Optional<Exercise> getExerciseById(@PathVariable("id") Long id) {
         return exerciseService.getExerciseById(id);
-    }*/
+    }
 
     @GetMapping("/exercises/{name}")
     public Optional<Exercise> getExerciseByName(@PathVariable("name") String name) {
@@ -44,26 +44,9 @@ public class ExerciseController {
         return exerciseService.saveNewExercise(newExercise);
     }
 
-    /*@PutMapping("/exercises/{id}")
+    @PutMapping("/exercises/{id}")
     public Exercise updateExerciseById(@PathVariable("id") Long id, @RequestBody Exercise exercise) {
         Exercise exerciseData = exerciseService.getExerciseById(id).orElseThrow();
-
-        try {
-            exerciseData.setName(exercise.getName());
-            exerciseData.setStarterLevel(exercise.getStarterLevel());
-            exerciseData.setAdvancedLevel(exercise.getAdvancedLevel());
-            exerciseData.setMuscleGroup(exercise.getMuscleGroup());
-            exerciseData.setGoal(exercise.getGoal());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return exerciseService.updateExercise(exerciseData);
-    }*/
-
-    @PutMapping("/exercises/{name}")
-    public Exercise updateExerciseByName(@PathVariable("name") String name, @RequestBody Exercise exercise) {
-        Exercise exerciseData = exerciseService.getExerciseByName(name).orElseThrow();
 
         try {
             exerciseData.setName(exercise.getName());

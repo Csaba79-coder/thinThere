@@ -45,7 +45,8 @@ public class Order {
   public Order() {
   }
 
-  private double totalPriceSum(){
+  //made public only for testing purposes!
+  public double totalPriceSum(){
 
     double currentTotalPrice = 0;
 

@@ -27,7 +27,7 @@ public class ExerciseController {
         return exerciseService.getExerciseById(id);
     }
 
-    @GetMapping("/exercises/{name}")
+    @GetMapping("/exercises/name/{name}")
     public Optional<Exercise> getExerciseByName(@PathVariable("name") String name) {
         return exerciseService.getExerciseByName(name);
     }

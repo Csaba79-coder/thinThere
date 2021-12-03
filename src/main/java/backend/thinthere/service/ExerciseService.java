@@ -20,6 +20,10 @@ public class ExerciseService {
         this.exerciseRepository = exerciseRepository;
     }
 
+    /*public Optional<Exercise> getExerciseById(Long id) {
+        return exerciseRepository.findById(id);
+    }*/
+
     public Optional<Exercise> getExerciseByName(String name) {
         return exerciseRepository.findByName(name);
     }

@@ -9,5 +9,4 @@ class ThinThereApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

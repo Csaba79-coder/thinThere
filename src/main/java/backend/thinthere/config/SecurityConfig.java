@@ -43,14 +43,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     http.csrf().disable()
         .authorizeRequests()
         .antMatchers("/login", "/register", "/loggedInUsers",
-                "/products")
+                "/products", "/orders", "/users")
         .permitAll()
         /*.antMatchers("/get").hasAuthority("DELETE")*/
         /*.anyRequest()
         .authenticated()
         */
             .and()
-            .authorizeRequests().antMatchers("/get")
+            .authorizeRequests().antMatchers("/get", "/products/{id}",
+                    "/products/category/{category}",
+                    "/products/type/{type}",
+                    "/orders/{id}", "/users/**")
             .authenticated().and().httpBasic()
             .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);

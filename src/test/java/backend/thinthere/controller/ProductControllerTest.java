@@ -24,21 +24,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 class ProductControllerTest {
 
-    Product dummyProduct = new Product();
-
-    /*public Product setDummyProduct(Product dummyProduct) {
-        this.dummyProduct = dummyProduct;
-
-        Set<TypeOfProduct> typeList = new HashSet<>();
-        typeList.add(new TypeOfProduct("GLUTEN_FREE"));
-
-        dummyProduct.setId(1L);
-        dummyProduct.setCategory(Category.SPORTS_EQUIPMENT);
-        dummyProduct.setTypeOfProductList(typeList);
-        dummyProduct.setProductName("Yoga Ball");
-        return dummyProduct;
-    }*/
-
     @Autowired
     private MockMvc mockMvc;
 

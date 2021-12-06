@@ -5,6 +5,7 @@ import backend.thinthere.model.Order;
 import backend.thinthere.service.OrderService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,6 +21,9 @@ public class OrderController {
 
   @GetMapping("/orders")
   public List<Order> getAllOrder(){
+    if (orderService.findAllOrder() == null) {
+      return null;
+    }
     return orderService.findAllOrder();
   }
 

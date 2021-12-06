@@ -74,6 +74,11 @@ public class UserService implements UserDetailsService {
         }
 
     }
+
+    public Optional<User> getUserByUsername(String username) {
+       return userRepository.findByUsername(username);
+    }
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return em.createQuery("SELECT user FROM User user WHERE user.username = :name", User.class)

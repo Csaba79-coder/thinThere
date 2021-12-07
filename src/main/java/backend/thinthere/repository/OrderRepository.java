@@ -2,8 +2,6 @@ package backend.thinthere.repository;
 
 import backend.thinthere.enums.Status;
 import backend.thinthere.model.Order;
-import backend.thinthere.model.Product;
-import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 
 import java.util.List;
 import java.util.Optional;

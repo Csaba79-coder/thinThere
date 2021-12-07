@@ -1,7 +1,6 @@
 package backend.thinthere.controller;
 
 import backend.thinthere.enums.Category;
-import backend.thinthere.model.Order;
 import backend.thinthere.model.Product;
 import backend.thinthere.model.TypeOfProduct;
 import backend.thinthere.service.ProductService;

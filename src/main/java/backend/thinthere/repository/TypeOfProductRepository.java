@@ -1,7 +1,6 @@
 package backend.thinthere.repository;
 
 import backend.thinthere.model.TypeOfProduct;
-import backend.thinthere.model.User;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 

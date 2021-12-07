@@ -3,7 +3,6 @@ package backend.thinthere.model;
 import backend.thinthere.enums.Status;
 import backend.thinthere.enums.TypeOfPayment;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 

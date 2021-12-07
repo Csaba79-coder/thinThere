@@ -2,7 +2,6 @@ package backend.thinthere.controller;
 
 import backend.thinthere.model.Exercise;
 import backend.thinthere.service.ExerciseService;
-import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

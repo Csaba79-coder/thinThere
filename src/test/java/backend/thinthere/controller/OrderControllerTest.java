@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -19,17 +20,6 @@ class OrderControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
-
-    @Test
-    void getAllOrder() {
-        try {
-            mockMvc.perform(get("/orders"))
-                    .andExpect(status().isOk())
-                    .andReturn();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     @Test
     void getInvalidEndpoint() throws Exception {

@@ -38,6 +38,7 @@ class UserTest {
 
         assertEquals(4, userService.getAllUsers().size());
 
-        assertEquals("csabavadasz79@gmail.com", userService.getUserByUsername("csabavadasz79@gmail.com").get().getUsername());
+        assertEquals("csabavadasz79@gmail.com",
+                userService.getUserByUsername("csabavadasz79@gmail.com").get().getUsername());
     }
 }

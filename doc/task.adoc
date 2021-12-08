@@ -1,0 +1,29 @@
+= thinThere
+
+== Don't wait with the overweight!
+
+We created a web shop as a DEMO project to complete our backend studies at Progmatic Academy
+
+We made both backend and frontend for the project!
+
+Project members:
+
+Flóra Konkoly-Sümegi - fullstack developer
+Gyöngyi Makó - backend developer
+Soma Bártfai - backend developer
+Csaba Vadász - backend developer
+
+Our backend project:
+
+'''
+
+https://github.com/Csaba79-coder/thinThere
+
+'''
+
+Our frontend project:
+
+'''
+https://github.com/Csaba79-coder/thinthere-react-js-new
+
+'''

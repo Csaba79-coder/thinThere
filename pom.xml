@@ -103,4 +103,12 @@
 		</plugins>
 	</build>
 
+	<scm>
+		<!-- backend project -->
+		<developerConnection>scm:git:git@github.com:Csaba79-coder/blog-app</developerConnection>
+		<tag>HEAD</tag>
+		<!-- frontend project -->
+		<!-- developerConnection>scm:git:git@github.com:Csaba79-coder/blog-app</developerConnection> -->
+	</scm>
+
 </project>

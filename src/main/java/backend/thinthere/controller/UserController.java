@@ -1,21 +1,14 @@
 package backend.thinthere.controller;
 
-import backend.thinthere.config.JwtUtil;
-import backend.thinthere.model.Product;
 import backend.thinthere.model.User;
 import backend.thinthere.model.dto.LoginRequestDTO;
 import backend.thinthere.model.dto.LoginSuccessDTO;
 import backend.thinthere.model.dto.UserRequestDTO;
 import backend.thinthere.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

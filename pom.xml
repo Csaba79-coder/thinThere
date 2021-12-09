@@ -66,6 +66,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt</artifactId>
 			<version>0.2</version>
@@ -84,6 +90,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.2.5.RELEASE</version>
 				<configuration>
 					<excludes>
 						<exclude>
@@ -95,5 +102,13 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<scm>
+		<!-- backend project -->
+		<developerConnection>scm:git:git@github.com:Csaba79-coder/blog-app</developerConnection>
+		<tag>HEAD</tag>
+		<!-- frontend project -->
+		<!-- developerConnection>scm:git:git@github.com:Csaba79-coder/blog-app</developerConnection> -->
+	</scm>
 
 </project>

@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "50c76d6b-f9a0-4a25-896a-4d48ea9a25ce",
+		"name": "thinThere-requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"gizi@gmail.com\",\n\t\"password\":\"word\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"gizi@gmail.com\",\n\t\"password\":\"word\",\n\t\"firstName\":\"gazis\",\n\t\"lastName\":\"fel\",\n\t\"country\":\"asdf\",\n\t\"postalCode\":\"asdf\",\n\t\"city\":\"adsf\",\n\t\"address\":\"asdf\",\n\t\"houseNumber\":\"asdf\",\n\t\"phoneNumber\":\"asdf\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/products/6",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "thinThere-token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJnaXppQGdtYWlsLmNvbSIsImV4cCI6MTYzOTA1NDE0MywiaWF0IjoxNjM4NDQ4MTMzfQ.YAjZz8envAKtqpER_qIfF6_4hapDNV3Ak3CqWuEbCgY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/products/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/products/category/SPORTS_EQUIPMENT",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "thinThere-token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJnaXppQGdtYWlsLmNvbSIsImV4cCI6MTYzOTEzMjk1OSwiaWF0IjoxNjM4NTI2OTQ5fQ.IRfgQ3xNHrztrOwd0nCB5GAXrPxjsBccicFyeSA792M",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/products/category/SPORTS_EQUIPMENT",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"category",
+						"SPORTS_EQUIPMENT"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/products/6",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "thinThere-token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJnaXppQGdtYWlsLmNvbSIsImV4cCI6MTYzOTEzMjk1OSwiaWF0IjoxNjM4NTI2OTQ5fQ.IRfgQ3xNHrztrOwd0nCB5GAXrPxjsBccicFyeSA792M",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -20,6 +20,9 @@ public class OrderController {
 
   @GetMapping("/orders")
   public List<Order> getAllOrder(){
+    if (orderService.findAllOrder() == null) {
+      return null;
+    }
     return orderService.findAllOrder();
   }
 

@@ -5,6 +5,7 @@ import backend.thinthere.model.dto.LoginRequestDTO;
 import backend.thinthere.model.dto.LoginSuccessDTO;
 import backend.thinthere.model.dto.UserRequestDTO;
 import backend.thinthere.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
@@ -17,6 +18,7 @@ import java.util.Optional;
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
+
   private UserService userService;
 
   public UserController(UserService userService) {
